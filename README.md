@@ -1,72 +1,54 @@
-### 📄 Project 2: Flight Fare Intelligence & Exploratory Data Analysis
+# ✈️ Flight Price Dynamics: Exploratory Data Analysis (EDA)
 
-```markdown
-# ✈️ Domestic Airline Pricing Intelligence: Exploratory Data Analysis (EDA)
-
-<p align="left">
-  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-Analytics-150458?style=for-the-badge&logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/Seaborn-Statistical_Viz-3776AB?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Matplotlib-Plotting-11557C?style=for-the-badge" />
-</p>
-
-## 📌 Executive Summary
-An in-depth statistical and exploratory analysis of domestic airfare dynamics based on **26,000+ flight records**. This project evaluates how travel class, route duration, layover frequencies, departure time-blocks, and dynamic booking lead times affect consumer ticket costs.
+## 📌 Project Overview
+This project performs an Exploratory Data Analysis (EDA) on domestic airline ticket pricing across 26,000+ flight records. It investigates the impact of booking lead time (`days_left`), flight duration, departure timing, and carrier market share on consumer ticket prices.
 
 ---
 
-## 🎯 Analytical Highlights & Business Findings
-* **Price Skewness & Density:** Applied KDE (Kernel Density Estimation) and histogram distributions to uncover multimodal fare structures between economy and premium cabin tiers.
-* **Lead-Time Price Elasticity:** Assessed exponential fare hikes and variance as `days_left` approaches departure.
-* **Flight Duration vs. Fare:** Modeled regression trends confirming positive cost correlation with travel duration and intermediate layovers.
-* **Carrier Market Share:** Mapped operational frequency across major carriers (Vistara, Air India, SpiceJet, AirAsia) to evaluate airline pricing strategies.
+## 🎯 Key Objectives & Analytical Dimensions
+* **Price Distribution:** Evaluated price spread across economy/business classes and identified right-skewed pricing distributions.
+* **Duration vs. Price:** Measured how stopovers and travel duration affect overall pricing using linear regression models.
+* **Market Share & Airlines:** Analyzed ticket volume distribution across domestic carriers (SpiceJet, AirAsia, Vistara, Air India).
+* **Booking Lead Time:** Examined price appreciation as flight departure dates approach.
 
 ---
 
-## 📈 Visual Explorations
+## 📈 Visualizations & Statistical Insights
 
-| Chart Type | Analytical Purpose | Target Dimension |
+* **Univariate Price Distribution (Histplot + KDE):** Analyzed the multimodal nature of ticket prices and visualizes fare distributions.
+* **Outlier Detection (Boxplot):** Identified premium pricing tiers and outlier fare spikes across standard bookings.
+* **Airline Market Distribution (Pie Chart):** Broke down the proportional flight frequency per airline carrier.
+* **Duration vs. Fare Regression (Scatter & Regplot):** Evaluated correlation trends between flight hours and final fare prices.
+
+---
+
+## 📁 Dataset Attributes
+
+| Field Name | Type | Description |
 | :--- | :--- | :--- |
-| **Histplot + KDE** | Evaluates overall ticket price distribution and skewness. | `price` |
-| **Boxplot** | Pinpoints price variance, quartile spreads, and outlier fare spikes. | `price` |
-| **Pie Chart** | Assesses proportional flight density and carrier market share. | `airline` |
-| **Regplot & Scatter** | Investigates linear pricing relationships with route duration. | `price` vs. `duration` |
-| **Multivariate Pairplot**| Evaluates multi-dimensional interactions across operational metrics. | `stops`, `duration`, `days_left`, `price` |
-
----
-
-## 📁 Dataset Schema
-
-| Attribute | Type | Description |
-| :--- | :--- | :--- |
-| **`airline`** | Categorical | Airline operator |
-| **`flight`** | String | Unique flight identifier code |
-| **`source_city`** | Categorical | Origin departure city |
-| **`departure_time`** | Categorical | Departure time window (Morning, Evening, Night, etc.) |
-| **`stops`** | Categorical | Number of layovers (zero, one, two+) |
-| **`arrival_time`** | Categorical | Arrival time window |
-| **`destination_city`** | Categorical | Final destination city |
-| **`class`** | Categorical | Cabin tier (Economy / Business) |
-| **`duration`** | Float | Total travel time in hours |
-| **`days_left`** | Integer | Booking lead time (days before flight) |
-| **`price`** | Float / Int | Ticket fare |
+| `airline` | Categorical | Airline carrier operating the flight |
+| `flight` | String | Unique flight code/number |
+| `source_city` | Categorical | Departure origin city |
+| `departure_time` | Categorical | Departure time-block (Morning, Evening, Night, etc.) |
+| `stops` | Categorical | Number of transit stops (zero, one, two+) |
+| `arrival_time` | Categorical | Arrival time-block |
+| `destination_city` | Categorical | Arrival destination city |
+| `class` | Categorical | Travel cabin class (Economy / Business) |
+| `duration` | Float | Total travel time in hours |
+| `days_left` | Integer | Days remaining between booking date and flight departure |
+| `price` | Float / Int | Final ticket fare in target currency |
 
 ---
 
 ## 💻 Tech Stack
-* **Language:** Python 3.8+
+* **Language:** Python
 * **Data Processing:** Pandas, NumPy
 * **Visualization:** Seaborn, Matplotlib
+* **Environment:** Google Colab / Jupyter Notebook
 
 ---
 
-## 🚀 Quickstart
-```bash
-# Clone the repository
-git clone [https://github.com/](https://github.com/)<your-username>/flight-price-eda.git
-
-# Install requirements
-pip install pandas numpy seaborn matplotlib
-
-# Run the notebook
-jupyter notebook Flightdataset.ipynb
+## 🚀 How to Run
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/](https://github.com/)<your-username>/<your-repo-name>.git
