@@ -52,3 +52,7 @@ This project performs an Exploratory Data Analysis (EDA) on domestic airline tic
 1. Clone the repository:
    ```bash
    git clone [https://github.com/](https://github.com/)<your-username>/<your-repo-name>.git
+2. Install dependencies:
+   pip install pandas numpy matplotlib seaborn
+3. Run the analysis notebook:
+   jupyter notebook Flightdataset.ipynb
